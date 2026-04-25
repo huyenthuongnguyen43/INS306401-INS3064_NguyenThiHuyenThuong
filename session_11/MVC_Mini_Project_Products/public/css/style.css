@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --primary: #4f46e5;
+    --primary-hover: #4338ca;
+    /* Nền sáng với gradient nhẹ nhàng */
+    --bg-gradient: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    --card-bg: rgba(255, 255, 255, 0.8);
+    --glass-border: rgba(255, 255, 255, 0.5);
+    --text-main: #1e293b;
+    --text-muted: #64748b;
+    --accent: #8b5cf6;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+body {
+    background: var(--bg-gradient);
+    min-height: 100vh;
+    color: var(--text-main);
+    padding: 4rem 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 1100px;
+    background: var(--card-bg);
+    /* Hiệu ứng kính mờ trên nền sáng */
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    padding: 3.5rem; /* Tăng padding để rộng rãi hơn */
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.05);
+    position: relative;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    letter-spacing: -0.03em; /* Chỉnh lại khoảng cách chữ tiêu đề */
+    margin-bottom: 0.5rem;
+    background: linear-gradient(135deg, #1e293b 0%, #4f46e5 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+    color: var(--text-muted);
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    margin-bottom: 2.5rem;
+}
+
+/* Tinh chỉnh Table cho thoáng và không bị rít */
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 0.75rem; /* Tạo khoảng cách giữa các dòng */
+    margin-top: 1rem;
+}
+
+th {
+    text-align: left;
+    padding: 1rem 1.5rem;
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em; /* Làm thưa chữ ở tiêu đề bảng */
+}
+
+td {
+    padding: 1.25rem 1.5rem;
+    background: rgba(255, 255, 255, 0.4);
+    border-top: 1px solid var(--glass-border);
+    border-bottom: 1px solid var(--glass-border);
+    transition: all 0.3s ease;
+}
+
+/* Bo góc cho dòng đầu và cuối của mỗi row */
+td:first-child {
+    border-left: 1px solid var(--glass-border);
+    border-top-left-radius: 16px;
+    border-bottom-left-radius: 16px;
+}
+td:last-child {
+    border-right: 1px solid var(--glass-border);
+    border-top-right-radius: 16px;
+    border-bottom-right-radius: 16px;
+}
+
+tr:hover td {
+    background: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.03);
+}
+
+.product-name {
+    font-weight: 600;
+    color: #0f172a;
+    letter-spacing: -0.01em; /* Chữ tên SP cần gọn nhưng không rít */
+}
+
+.price {
+    font-weight: 700;
+    color: #059669;
+    letter-spacing: 0.02em;
+}
+
+.badge {
+    background: #f1f5f9;
+    color: #475569;
+    padding: 6px 14px;
+    border-radius: 10px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    border: 1px solid #e2e8f0;
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: white;
+    padding: 0.8rem 1.8rem;
+    border-radius: 14px;
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: 0.3s;
+    box-shadow: 0 10px 20px -5px rgba(79, 70, 229, 0.4);
+}
+
+.btn-primary:hover {
+    background: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 15px 25px -5px rgba(79, 70, 229, 0.5);
+}
